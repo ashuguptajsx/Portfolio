@@ -10,7 +10,7 @@ const App = () => {
       <div
         className="absolute top-0 z-[-10] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
         style={{
-          filter: "blur(19px)", // Adjust blur effect as needed
+          filter: "blur(1px)", // Adjust blur effect as needed
         }}
       ></div>
 
