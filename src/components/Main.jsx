@@ -43,13 +43,12 @@ const Main = () => {
         <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
           <motion.div
             className="relative inline-flex group h-80 w-80"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             {/* Glowing Gradient Border */}
             <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
-            {/* Image */}
             <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full"
             >
               <img

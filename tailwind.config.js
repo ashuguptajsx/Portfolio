@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        "mono-cutive": ["Cutive Mono", "monospace"]
+        "mono-cutive": ["Cutive Mono", "monospace"],
+        // "font-family": ["EB Garamond", "serif"]
+        "Lato": ["Lato", "sans-serif"]
+        
       }
     },
   },
