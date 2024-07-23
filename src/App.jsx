@@ -2,22 +2,23 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 // import About from "./components/About";
-import backgroundImage from "./assets/background3.jpg"; // Adjust path as needed
 
 const App = () => {
   return (
     <div className="relative min-h-screen w-screen overflow-x-hidden overflow-y-auto">
-      {/* Background Image */}
+      {/* Background */}
       <div
-        className="absolute top-0 z-[-10] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+        className="absolute inset-0 z-[-10] h-full w-full bg-neutral-900"
         style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "blur(8px)" // Adjust blur effect as needed
+          background: `radial-gradient(#ffffff33 1px, #00091d 1px), linear-gradient(rgba(245, 0, 255, 0.2), rgba(245, 0, 255, 0.2))`,
+          backgroundSize: "20px 20px, 100%",
+          backgroundPosition: "center, center",
+          backgroundRepeat: "repeat, no-repeat",
+          filter: "blur(3px)"
         }}
-      ></div>
+      >
+        <div className="absolute inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]"></div>
+      </div>
       
       {/* Content */}
       <div className="relative z-10 min-h-screen">
