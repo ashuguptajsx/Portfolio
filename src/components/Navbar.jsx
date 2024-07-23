@@ -12,11 +12,19 @@ const Navbar = () => {
           Ag
         </h1>
       </div>
-      <div className="m-8 flex items-center justify-between sm:ml-4 gap-4  lg:gap-6">
-        <GrResume className="text-white" aria-label="Resume" />
-        <GrLinkedin className="text-white" aria-label="LinkedIn" />
-        <SiGithub className="text-white" aria-label="GitHub" />
-        <FaSquareInstagram className="text-white" aria-label="Instagram" />
+      <div className="m-8 flex items-center justify-between sm:ml-4 gap-4 lg:gap-6">
+        <a href="https://docs.google.com/document/d/1uaAAfMi54KX1FhHEQaMclwUvVPu1OJ3drLDi4Q_T3FI" target="_blank" rel="noopener noreferrer" className="text-white" aria-label="Resume">
+          <GrResume />
+        </a>
+        <a href="https://www.linkedin.com/in/aashutosh-gupta-9a089622b/" target="_blank" rel="noopener noreferrer" className="text-blue-700" aria-label="LinkedIn">
+          <GrLinkedin />
+        </a>
+        <a href="https://github.com/ashu-1403" target="_blank" rel="noopener noreferrer" className="text-white" aria-label="GitHub">
+          <SiGithub />
+        </a>
+        <a href="https://www.instagram.com/ashushares/" target="_blank" rel="noopener noreferrer" className="text-pink-400" aria-label="Instagram">
+          <FaSquareInstagram />
+        </a>
       </div>
     </nav>
   );

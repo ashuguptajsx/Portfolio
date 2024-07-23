@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-// import About from "./components/About";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         }}>
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black z-20" style={{
           WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 20%, black)',
-          maskImage: 'radial-gradient(ellipse at center, transparent 1%, black)'
+          maskImage: 'radial-gradient(ellipse at center, transparent 1%, black)',
         }}></div>
       </div>
 
@@ -22,7 +22,7 @@ const App = () => {
         <Navbar />
         <main className="pt-20">
           <Main />
-          {/* <About /> */}
+          <About />
         </main>
       </div>
     </div>

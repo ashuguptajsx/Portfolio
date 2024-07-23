@@ -1,28 +1,24 @@
-import React from 'react';
-import profileImage from '../assets/image.jpg'; // Replace with the actual image path
+import React from "react";
+import image from "../assets/developer.jpg";
 
 const About = () => {
   return (
-    <div className="border-b border-neutral-900 pb-10 lg:mb-35 " >
-      <div className="flex flex-col lg:flex-row items-center lg:items-start mx-10 mt-29 lg:mt-24"> {/* Adjusted top margin here */}
-        {/* Image Container */}
-        
-
-        {/* Text Content Container */}
-        <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start lg:pl-10 mt-10 lg:mt-0">
-          <h2 className="text-4xl font-semibold tracking-tight mt-6 lg:mt-0 lg:text-5xl text-white sm:mb-6">
-            About Me
-          </h2>
-          <p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl text-white mb-4">
-            Hello! I'm Aashutosh Gupta, a passionate Full Stack Developer with a knack for creating seamless, responsive, and visually appealing web applications. I thrive on the challenges and excitement that come with building comprehensive web solutions from the ground up.
-          </p>
-          <p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl text-white mb-4">
-            With a strong foundation in both front-end and back-end technologies, I enjoy working on every aspect of the development process. My goal is to deliver high-quality, user-friendly websites and applications that meet the needs of clients and users alike.
-          </p>
-          <p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl text-white">
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good book. Let's build something amazing together!
-          </p>
+    <div className="border-b border-neutral-900 pb-10">
+      <div className="flex items-center">
+        <h1 className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-4xl ml-16 lg:ml-64 font-In-ter">
+          About Me
+        </h1>{" "}
+        {/* Remove margin if needed */}
+        <div className="flex-grow border-t-4 border-white mr-10 lg:mr-80"></div>{" "}
+        {/* Adjust width as needed */}
+      </div>
+      <div className="flex flex-row gap-4">
+        <div>
+          <img
+          className="" 
+          src="{image}" alt="" />
         </div>
+        <p className="text-white">hello</p>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,7 +11,8 @@ export default {
       fontFamily:{
         "mono-cutive": ["Cutive Mono", "monospace"],
         // "font-family": ["EB Garamond", "serif"]
-        "Lato": ["Lato", "sans-serif"]
+        "Lato": ["Lato", "sans-serif"],
+        "In-ter": ["Inter", "sans-serif"]
         
       }
     },
