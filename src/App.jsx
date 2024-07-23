@@ -9,7 +9,7 @@ const App = () => {
     <div className="relative min-h-screen w-screen overflow-x-hidden overflow-y-auto">
       {/* Background Image */}
       <div
-        className="absolute inset-0 -z-10 min-h-screen"
+        className="absolute inset-0 -z-10"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -24,6 +24,7 @@ const App = () => {
         <Navbar />
         <main className="pt-20"> {/* Ensure proper padding for content */}
           <Main />
+          
         </main>
       </div>
     </div>
