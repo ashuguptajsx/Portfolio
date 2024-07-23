@@ -50,15 +50,14 @@ const Main = () => {
             {/* Glowing Gradient Border */}
             <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
             {/* Image */}
-            <motion.div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full"
-            animate={{ y: [0, -30, 0] }}
-            transition={{ duration: 0.5, ease: "easeInOut", repeat: Infinity }}>
+            <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full"
+            >
               <img
                 src={profileImage}
                 alt="Profile"
                 className="h-full w-full object-cover rounded-xl"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
