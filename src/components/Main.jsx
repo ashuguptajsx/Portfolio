@@ -8,7 +8,7 @@ const Main = () => {
         {/* Text Content Container */}
         <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start lg:pr-10">
           <h1 className="text-4xl font-thin tracking-tight mt-6 mb-10 lg:text-6xl lg:ml-28 text-white sm:mt-0">
-            Aashutosh&nbsp;Gupta
+             Aashutosh&nbsp;Gupta
           </h1>
           <span className="text-2xl font-semibold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-6 lg:text-3xl lg:ml-28">
             Full Stack Developer

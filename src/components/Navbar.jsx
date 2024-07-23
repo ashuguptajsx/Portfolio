@@ -12,7 +12,7 @@ const Navbar = () => {
           Ag
         </h1>
       </div>
-      <div className="m-8 flex items-center justify-between sm:ml-4 gap-4 ">
+      <div className="m-8 flex items-center justify-between sm:ml-4 gap-4  lg:gap-6">
         <GrResume className="text-white" aria-label="Resume" />
         <GrLinkedin className="text-white" aria-label="LinkedIn" />
         <SiGithub className="text-white" aria-label="GitHub" />
