@@ -23,16 +23,16 @@ const Main = () => {
 
         {/* Image Container with Gradient Border */}
         <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
-          <div className="relative h-80 w-80 overflow-hidden rounded-xl">
+          <div className="relative h-80 w-80 rounded-xl overflow-hidden">
             {/* Gradient Border */}
-            <div className="absolute inset-0 rounded-xl border-[6px] border-transparent bg-clip-padding border-gradient-to-br from-blue-500 via-purple-500 to-pink-500"></div>
-            {/* Image */}
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <img
-                src={profileImage} // Replace with the actual image path
-                alt="Profile"
-                className="h-full w-full object-cover rounded-xl"
-              />
+            <div className="absolute inset-0 p-[6px] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl">
+              <div className="h-full w-full bg-neutral-900 rounded-xl">
+                <img
+                  src={profileImage} // Replace with the actual image path
+                  alt="Profile"
+                  className="h-full w-full object-cover rounded-xl"
+                />
+              </div>
             </div>
           </div>
         </div>
