@@ -6,29 +6,28 @@ import Main from "./components/Main";
 const App = () => {
   return (
     <div className="relative min-h-screen w-screen overflow-x-hidden overflow-y-auto">
-      {/* Background */}
-      <div className="absolute inset-0 z-[-10] h-full w-full bg-slate-950">
-        {/* Existing Radial and Linear Gradient Background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(#ffffff33 1px, #00091d 1px), linear-gradient(rgba(245, 0, 255, 0.2), rgba(245, 0, 255, 0.2))`,
-            backgroundSize: "20px 20px, 100%",
-            backgroundPosition: "center, center",
-            backgroundRepeat: "repeat, no-repeat",
-            filter: "blur(3px)"
-          }}
-        ></div>
-        {/* Additional Fuchsia Overlay */}
-       
-        {/* New Radial Gradient Layer */}
-        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"></div>
+      <div className="absolute top-0 z-[-3] h-screen w-screen">
+        <div className="relative h-full w-full bg-slate-950">
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        </div>
+      </div>
+      <div
+        className="absolute inset-0 z-[-2] h-full w-full bg-neutral-950"
+        style={{
+          background: `radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))`,
+          backgroundSize: "20px 20px",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+          // filter: "blur(3px)"
+        }}
+      >
+        
       </div>
 
-      {/* Content */}
+      
       <div className="relative z-10 min-h-screen">
         <Navbar />
-        <main className="pt-20"> {/* Ensure proper padding for content */}
+        <main className="pt-20">
           <Main />
           {/* <About /> */}
         </main>

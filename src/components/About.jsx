@@ -6,20 +6,7 @@ const About = () => {
     <div className="border-b border-neutral-900 pb-10 lg:mb-35 " >
       <div className="flex flex-col lg:flex-row items-center lg:items-start mx-10 mt-29 lg:mt-24"> {/* Adjusted top margin here */}
         {/* Image Container */}
-        <div className="w-full lg:w-1/3 flex justify-center lg:justify-start lg:mr-10 mt-10 lg:mt-0">
-          <div className="relative h-80 w-80 overflow-hidden rounded-xl">
-            {/* Gradient Border */}
-            <div className="absolute inset-0 rounded-xl border-[6px] border-transparent bg-clip-padding border-gradient-to-br from-blue-500 via-purple-500 to-pink-500"></div>
-            {/* Image */}
-            <div className="relative h-full w-full rounded-xl overflow-hidden">
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="h-full w-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
+        
 
         {/* Text Content Container */}
         <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start lg:pl-10 mt-10 lg:mt-0">
