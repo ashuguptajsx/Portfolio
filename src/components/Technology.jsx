@@ -29,7 +29,7 @@ const Technology = () => {
           className="flex-grow border-t-4 border-white  mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className='flex flex-wrap justify-center items-center h-auto mt-10 py-10'>
+      <div className='flex flex-wrap justify-center items-center h-auto mt-1 py-10'>
         {[
           { Icon: FaReact, color: 'text-blue-500' },
           { Icon: AiOutlineHtml5, color: 'text-orange-500' },
