@@ -26,7 +26,7 @@ const Technology = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-grow border-t-4 border-white mr-14 mt-1 lg:mr-64"
+          className="flex-grow border-t-4 border-white  mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
       <div className='flex flex-wrap justify-center items-center h-auto mt-10 py-10'>
@@ -40,7 +40,7 @@ const Technology = () => {
         ].map(({ Icon, color }, index) => (
           <motion.div
             key={index}
-            className={`mx-2 border border-white p-2 ${color}`}
+            className={`mx-2  ${color}`}
             variants={iconVariants}
             initial="initial"
             whileHover="hover"
