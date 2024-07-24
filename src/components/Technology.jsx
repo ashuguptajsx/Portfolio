@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaCss3Alt, FaNodeJs } from "react-icons/fa";
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { FaCss3Alt } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
-import { FaNodeJs } from "react-icons/fa";
+
+const iconVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.2, rotate: 15 },
+};
 
 const Technology = () => {
   return (
@@ -26,13 +29,26 @@ const Technology = () => {
           className="flex-grow border-t-4 border-white mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className='flex flex-wrap justify-center items-center h-auto py-10'>
-        <FaReact className='text-blue-500 text-4xl sm:text-6xl mx-2 border border-white p-2'/>
-        <AiOutlineHtml5 className='text-orange-500 text-4xl sm:text-6xl mx-2 border border-white p-2'/>
-        <FaCss3Alt className='text-blue-600 text-4xl sm:text-6xl mx-2 border border-white p-2'/>
-        <SiExpress className='text-white text-4xl sm:text-6xl mx-2 border border-white p-2'/>
-        <DiMongodb className='text-green-400 text-4xl sm:text-6xl mx-2 border border-white p-2'/>
-        <FaNodeJs className='text-green-500 text-4xl sm:text-6xl mx-2 border border-white p-2'/>
+      <div className='flex flex-wrap justify-center items-center h-auto mt-10 py-10'>
+        {[
+          { Icon: FaReact, color: 'text-blue-500' },
+          { Icon: AiOutlineHtml5, color: 'text-orange-500' },
+          { Icon: FaCss3Alt, color: 'text-blue-600' },
+          { Icon: SiExpress, color: 'text-white' },
+          { Icon: DiMongodb, color: 'text-green-400' },
+          { Icon: FaNodeJs, color: 'text-green-500' }
+        ].map(({ Icon, color }, index) => (
+          <motion.div
+            key={index}
+            className={`mx-2 border border-white p-2 ${color}`}
+            variants={iconVariants}
+            initial="initial"
+            whileHover="hover"
+            transition={{ duration: 0.3 }}
+          >
+            <Icon className='text-xl sm:text-6xl'/>
+          </motion.div>
+        ))}
       </div>
     </div>
   )
