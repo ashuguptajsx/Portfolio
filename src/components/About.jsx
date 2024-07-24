@@ -25,7 +25,7 @@ const About = () => {
 
       <div className="flex flex-col items-center mt-24 px-4 lg:px-0">
         <div className="flex justify-center mb-8">
-          <img src={image} alt="Developer" className="w-48 h-48 rounded-full object-cover" />
+          <img src={image} alt="Developer" className="w-64 h-60 rounded-full object-cover" />
         </div>
         <p className="text-white text-center font-In-ter font-extrabold text-sm lg:text-lg lg:mx-96">
           As a seasoned Full Stack Developer, I possess a comprehensive skill set that spans both front-end and back-end technologies. My expertise includes creating seamless, user-friendly interfaces with modern frameworks and libraries such as React, while also ensuring robust, scalable server-side functionality using Node.js and Express. With a deep understanding of databases, including SQL and NoSQL.
