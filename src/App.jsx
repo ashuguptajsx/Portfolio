@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import About from "./components/About";
+import Technology from "./components/Technology";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <main className="pt-20">
           <Main />
           <About />
+          <Technology/>
         </main>
       </div>
     </div>

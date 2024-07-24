@@ -19,7 +19,7 @@ const About = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-grow border-t-4 border-white mr-14 lg:mr-64"
+          className="flex-grow border-t-4 border-white mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
 
