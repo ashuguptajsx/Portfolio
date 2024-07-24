@@ -20,7 +20,7 @@ const Main = () => {
               </span>
             </motion.h1>
             <motion.span
-              className="text-2xl font-semibold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-6 lg:text-3xl lg:ml-28"
+              className="text-2xl font-semibold text-white mb-6 lg:text-3xl lg:ml-28"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
@@ -28,14 +28,14 @@ const Main = () => {
               Full Stack Developer
             </motion.span>
           </div>
-          <motion.p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl lg:ml-28 text-white mb-6 san-serif inter"
+          <motion.p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl lg:ml-28  mb-6 san-serif inter bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}>
             Welcome to my <motion.span className="font-extrabold">portfolio!</motion.span>
             
           </motion.p>
-          <a className="mt-6 lg:ml-28 py-2 px-4 bg-white text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+          <a className="mt-6 lg:ml-28 py-2 px-4 bg-blue-600 text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
           href="mailto:ashugupta1403@gmail.com">
             Hire Me
           </a>
@@ -48,7 +48,7 @@ const Main = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {/* Glowing Gradient Border */}
+            
             <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
             <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full"
             >
