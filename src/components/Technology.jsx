@@ -18,7 +18,7 @@ const Technology = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-16 lg:ml-52 font-Inter mr-2 sm:ml-2"
+          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-14 lg:ml-48  font-Inter mr-2 sm:ml-2"
         >
           Technologies
         </motion.h1>
@@ -29,7 +29,7 @@ const Technology = () => {
           className="flex-grow border-t-4 border-pink-300  mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className='flex flex-wrap justify-center items-center h-auto lg:mt-36 lg:mb-36 py-10'>
+      <div className='flex flex-wrap justify-center items-center h-auto mt-12 lg:mt-36 lg:mb-36 '>
         {[
           { Icon: FaReact, color: 'text-blue-500' },
           { Icon: AiOutlineHtml5, color: 'text-orange-500' },
