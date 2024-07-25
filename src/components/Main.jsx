@@ -14,6 +14,7 @@ const Main = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.1 }} // Pop-out effect on tap for small screens
             >
               <span className="block">Hey, I'm</span>
               <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -26,6 +27,7 @@ const Main = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.1 }} // Pop-out effect on tap for small screens
             >
               Full Stack Developer
             </motion.span>
@@ -36,6 +38,7 @@ const Main = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 1.1 }} // Pop-out effect on tap for small screens
           >
             Welcome to my <motion.span className="font-extrabold">portfolio!</motion.span>
           </motion.p>
@@ -43,6 +46,7 @@ const Main = () => {
             className="mt-6 lg:ml-28 py-2 px-4 bg-blue-600 text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             href="mailto:ashugupta1403@gmail.com"
             whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }} // Pop-out effect on tap for small screens
           >
             Hire Me
           </motion.a>
@@ -55,7 +59,7 @@ const Main = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             whileHover={{ scale: 1.05, rotate: 0 }}
-            whileTap={{ scale: 1.2 }}  // Added pop-out effect on tap
+            whileTap={{ scale: 1.2 }} // Pop-out effect on tap for small screens
           >
             <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
             <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full">
