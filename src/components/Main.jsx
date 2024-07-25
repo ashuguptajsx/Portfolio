@@ -55,6 +55,7 @@ const Main = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             whileHover={{ scale: 1.05, rotate: 0 }}
+            whileTap={{ scale: 1.2 }}  // Added pop-out effect on tap
           >
             <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
             <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full">
