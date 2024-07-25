@@ -48,12 +48,12 @@ const Technology = () => {
             whileTap="tap"
             transition={{ duration: 0.3 }}
           >
-            <Icon className='text-3xl sm:text-8xl'/>
+            <Icon className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl' />
           </motion.div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default Technology;
