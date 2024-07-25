@@ -6,8 +6,9 @@ import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 
 const iconVariants = {
-  initial: { scale: 1 },
+  initial: { scale: 1, rotate: 0 },
   hover: { scale: 1.2, rotate: 15 },
+  tap: { scale: 1.4, rotate: 0 }
 };
 
 const Technology = () => {
@@ -29,7 +30,7 @@ const Technology = () => {
           className="flex-grow border-t-4 border-pink-300  mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className='flex flex-wrap justify-center items-center h-auto mt-12 lg:mt-36 lg:mb-36 '>
+      <div className='flex flex-wrap justify-center items-center h-auto mt-12 lg:mt-36 lg:mb-36'>
         {[
           { Icon: FaReact, color: 'text-blue-500' },
           { Icon: AiOutlineHtml5, color: 'text-orange-500' },
@@ -40,10 +41,11 @@ const Technology = () => {
         ].map(({ Icon, color }, index) => (
           <motion.div
             key={index}
-            className={`mx-2  ${color}`}
+            className={`mx-2 ${color}`}
             variants={iconVariants}
             initial="initial"
             whileHover="hover"
+            whileTap="tap"
             transition={{ duration: 0.3 }}
           >
             <Icon className='text-3xl sm:text-8xl'/>
