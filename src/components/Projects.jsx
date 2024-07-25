@@ -1,26 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
-
 const Projects = () => {
   return (
     <div className="my-10 sm:my-10">
@@ -38,37 +18,190 @@ const Projects = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-grow border-t-4 border-pink-300 mr-14 mt-1 lg:mr-64" 
+          className="flex-grow border-t-4 border-pink-300 mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className="flex justify-center items-center m-10 lg:mt-0">
-        <motion.div
-          className="w-96 h-[100vh] sm:h-[100vh] lg:h-[80vh] bg-slate-900 lg:w-[100vh] lg:m-20 sm:m-32 border rounded-2xl p-4 flex flex-col sm:flex-row sm:flex-wrap gap-4"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            className="flex-1 bg-gray-700 p-4 rounded-lg"
-            variants={item}
-            whileHover={{ scale: 1.05, opacity: 0.9, transition: { duration: 0.5, ease: "easeOut" }}}
-            whileTap={{ scale: 1.1 }} // Added tap effect
-          >
-            <h1 className="flex justify-center text-center text-white mb-2 font-Lato">Zenith</h1>
-            <p className="text-sm lg:text-lg flex text-center">
-              It is a MERN chat App in which we can talk to a user seamlessly
+
+      <div className="flex flex-col mt-14 lg:m-28 justify-center items-center">
+        {/* Zenith Project */}
+        <div className="h-auto min-h-[16rem] sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[24rem] bg-gray-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-2xl m-2 sm:m-4 md:m-6 lg:m-8 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-800">
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+              Zenith
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6">
+              A MERN chat app enabling seamless person-to-person communication
+              with real-time messaging capabilities.
             </p>
-          </motion.div>
-          
-          <motion.div
-            className="flex-1 bg-gray-700 p-4 rounded-lg"
-            variants={item}
-            whileHover={{ scale: 1.05, rotate: 0, opacity: 0.9, transition: { duration: 0.5, ease: "easeOut" }}}
-            whileTap={{ scale: 1.1 }} // Added tap effect
-          >
-            <h1 className="flex justify-center items-center text-white">Weather App</h1>
-          </motion.div>
-        </motion.div>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-3">
+              Tech Stack
+            </h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {[
+                { name: "HTML", color: "bg-orange-500" },
+                { name: "CSS", color: "bg-blue-500" },
+                { name: "JavaScript", color: "bg-yellow-500" },
+                { name: "React.js", color: "bg-cyan-500" },
+                { name: "MongoDB", color: "bg-green-500" },
+                { name: "Express.js", color: "bg-red-500" },
+              ].map((tech, index) => (
+                <span
+                  key={index}
+                  className={`px-3 py-1 ${
+                    tech.color
+                  } bg-opacity-20 text-white rounded-full text-xs sm:text-sm border border-opacity-40 ${tech.color.replace(
+                    "bg-",
+                    "border-"
+                  )}`}
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-between mt-4">
+            <a
+              href="https://github.com/yourusername/zenith"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://zenith-chat.example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        {/* Weather App Project */}
+        <div className="h-auto min-h-[16rem] sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[24rem] bg-gray-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-2xl m-2 sm:m-4 md:m-6 lg:m-8 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-800">
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+              Weather App
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6">
+              It is a Weather App which I have created using the OpenWeather API.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-3">
+              Tech Stack
+            </h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {[
+                { name: "HTML", color: "bg-orange-500" },
+                { name: "CSS", color: "bg-blue-500" },
+                { name: "JavaScript", color: "bg-yellow-500" },
+                { name: "React.js", color: "bg-cyan-500" },
+                { name: "MongoDB", color: "bg-green-500" },
+                { name: "Express.js", color: "bg-red-500" },
+              ].map((tech, index) => (
+                <span
+                  key={index}
+                  className={`px-3 py-1 ${
+                    tech.color
+                  } bg-opacity-20 text-white rounded-full text-xs sm:text-sm border border-opacity-40 ${tech.color.replace(
+                    "bg-",
+                    "border-"
+                  )}`}
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-between mt-4">
+            <a
+              href="https://github.com/yourusername/weather-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://weather-app.example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        {/* Portfolio Website Project */}
+        <div className="h-auto min-h-[16rem] sm:min-h-[18rem] md:min-h-[20rem] lg:min-h-[24rem] bg-gray-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-2xl m-2 sm:m-4 md:m-6 lg:m-8 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-800">
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+              Portfolio Website
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-6">
+              It is my personal Portfolio website.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-200 mb-3">
+              Tech Stack
+            </h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {[
+                { name: "HTML", color: "bg-orange-500" },
+                { name: "CSS", color: "bg-blue-500" },
+                { name: "JavaScript", color: "bg-yellow-500" },
+                { name: "React.js", color: "bg-cyan-500" },
+              ].map((tech, index) => (
+                <span
+                  key={index}
+                  className={`px-3 py-1 ${
+                    tech.color
+                  } bg-opacity-20 text-white rounded-full text-xs sm:text-sm border border-opacity-40 ${tech.color.replace(
+                    "bg-",
+                    "border-"
+                  )}`}
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-between mt-4">
+            <a
+              href="https://github.com/yourusername/portfolio-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://portfolio.example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        <div className="h-64 sm:h-72 md:h-80 lg:h-96 bg-slate-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-3xl m-2 sm:m-4 md:m-6 lg:m-8">
+          {/* Add your content here */}
+        </div>
+        <div className="h-64 sm:h-72 md:h-80 lg:h-96 bg-slate-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-3xl m-2 sm:m-4 md:m-6 lg:m-8">
+          {/* Add your content here */}
+        </div>
+        <div className="h-64 sm:h-72 md:h-80 lg:h-96 bg-slate-900 w-5/6 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-3xl m-2 sm:m-4 md:m-6 lg:m-8">
+          {/* Add your content here */}
+        </div>
       </div>
     </div>
   );
