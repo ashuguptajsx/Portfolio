@@ -26,10 +26,10 @@ const Technology = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex-grow border-t-4 border-white  mr-14 mt-1 lg:mr-64"
+          className="flex-grow border-t-4 border-pink-300  mr-14 mt-1 lg:mr-64"
         ></motion.div>
       </div>
-      <div className='flex flex-wrap justify-center items-center h-auto mt-1 py-10'>
+      <div className='flex flex-wrap justify-center items-center h-auto lg:mt-36 lg:mb-36 py-10'>
         {[
           { Icon: FaReact, color: 'text-blue-500' },
           { Icon: AiOutlineHtml5, color: 'text-orange-500' },
@@ -46,7 +46,7 @@ const Technology = () => {
             whileHover="hover"
             transition={{ duration: 0.3 }}
           >
-            <Icon className='text-xl sm:text-6xl'/>
+            <Icon className='text-3xl sm:text-8xl'/>
           </motion.div>
         ))}
       </div>

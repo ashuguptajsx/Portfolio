@@ -13,6 +13,7 @@ const Main = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
             >
               <span className="block">Hey, I'm</span>
               <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -24,34 +25,39 @@ const Main = () => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
             >
               Full Stack Developer
             </motion.span>
           </div>
-          <motion.p className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl lg:ml-28  mb-6 san-serif inter bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}>
+          <motion.p
+            className="text-center lg:text-left text-base lg:text-lg max-w-md lg:max-w-xl lg:ml-28 mb-6 san-serif inter bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+          >
             Welcome to my <motion.span className="font-extrabold">portfolio!</motion.span>
-            
           </motion.p>
-          <a className="mt-6 lg:ml-28 py-2 px-4 bg-blue-600 text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-          href="mailto:ashugupta1403@gmail.com">
+          <motion.a
+            className="mt-6 lg:ml-28 py-2 px-4 bg-blue-600 text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            href="mailto:ashugupta1403@gmail.com"
+            whileHover={{ scale: 1.1 }}
+          >
             Hire Me
-          </a>
+          </motion.a>
         </div>
 
         <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
           <motion.div
             className="relative inline-flex group h-80 w-80"
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileHover={{ scale: 1.05, rotate: 0 }}
           >
-            
-            <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
-            <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full"
-            >
+            <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
+            <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full">
               <img
                 src={profileImage}
                 alt="Profile"
@@ -61,7 +67,6 @@ const Main = () => {
           </motion.div>
         </div>
       </div>
-      
     </div>
   );
 };
