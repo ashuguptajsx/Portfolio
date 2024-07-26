@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image from "../assets/developer.jpg";
 
 const Contact = () => {
   return (
@@ -10,7 +9,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", stiffness: 200, damping: 20 }}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-16 lg:ml-52 font-Inter mr-2 sm:ml-2"
+          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-16 lg:ml-52 font-Inter mr-2 sm:ml-2 mt-10 lg:mt-0" // Margin-top for smaller screens only
         >
           Contact Us
         </motion.h1>
@@ -47,7 +46,16 @@ const Contact = () => {
                 className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
               />
             </div>
-            
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-300">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your Phone Number"
+                className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
+              />
+            </div>
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
               <textarea

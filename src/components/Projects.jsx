@@ -124,7 +124,7 @@ const Projects = () => {
               GitHub
             </a>
             <a
-              href="http://my-project-flax-omega.vercel.app"
+              href="http://aashutoshgupta.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
