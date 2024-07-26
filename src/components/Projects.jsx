@@ -62,7 +62,7 @@ const Projects = () => {
           </div>
           <div className="flex justify-between mt-4">
             <a
-              href="https://github.com/yourusername/zenith"
+              href="https://github.com/ashu-1403/Zenith"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
@@ -70,7 +70,7 @@ const Projects = () => {
               GitHub
             </a>
             <a
-              href="https://zenith-chat.example.com"
+              href="https://zenith-hdwo.onrender.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
@@ -116,7 +116,7 @@ const Projects = () => {
           </div>
           <div className="flex justify-between mt-4">
             <a
-              href="https://github.com/yourusername/portfolio"
+              href="https://github.com/ashu-1403/Portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
@@ -124,7 +124,7 @@ const Projects = () => {
               GitHub
             </a>
             <a
-              href="https://portfolio.example.com"
+              href="http://my-project-flax-omega.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
@@ -169,7 +169,7 @@ const Projects = () => {
           </div>
           <div className="flex justify-between mt-4">
             <a
-              href="https://github.com/yourusername/weatherapp"
+              href="https://github.com/ashu-1403/Weather_application"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
@@ -177,7 +177,7 @@ const Projects = () => {
               GitHub
             </a>
             <a
-              href="https://weatherapp.example.com"
+              href="https://weather-application-drab-five.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline"
