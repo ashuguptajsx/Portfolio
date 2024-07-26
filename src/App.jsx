@@ -1,10 +1,12 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import About from "./components/About";
 import Technology from "./components/Technology";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+
 const App = () => {
   return (
     <div className="relative min-h-screen w-screen overflow-x-hidden overflow-y-auto">
@@ -37,6 +39,7 @@ const App = () => {
           <Projects />
           <Contact />
         </main>
+        <Analytics />
       </div>
     </div>
   );
