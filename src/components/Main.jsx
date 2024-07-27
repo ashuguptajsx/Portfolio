@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import profileImage from "../assets/image.jpg";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
 const Main = () => {
+  const [tapped, setTapped] = useState(false);
+
   return (
     <div className="border-b border-neutral-900 pb-20 mb-10 lg:mb-20">
       <div className="flex flex-col lg:flex-row items-center lg:items-start mx-4 sm:mx-10">
@@ -74,13 +76,19 @@ const Main = () => {
         <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
           <motion.div
             className="relative inline-flex group h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 1, rotate: -10 }} // Initial tilt
+            animate={{ rotate: tapped ? 0 : -10 }} // Rotate back to 0 if tapped
             transition={{ duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1.05, rotate: 0 }}
-            whileTap={{ scale: 1.2 }}
+            whileHover={{ scale: 1 }} // Ensure no scaling on hover
+            whileTap={() => setTapped(true)} // Set tapped state to true on tap
+            style={{
+              borderColor: 'violet',
+              borderWidth: '4px',
+              borderStyle: 'solid',
+              borderRadius: '12px' // Curved border
+            }}
           >
-            <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
+            <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#475569] via-[#1E293B] to-[#0F172A] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
             <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full">
               <img
                 src={profileImage}
