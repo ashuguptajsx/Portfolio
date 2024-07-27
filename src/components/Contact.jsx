@@ -60,16 +60,7 @@ const Contact = () => {
                 className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
               />
             </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-300">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Your Phone Number"
-                className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
-              />
-            </div>
+            
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
               <textarea
