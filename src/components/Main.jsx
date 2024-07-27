@@ -73,7 +73,7 @@ const Main = () => {
 
         <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
           <motion.div
-            className="relative inline-flex group h-60 w-60 sm:h-80 sm:w-80"
+            className="relative inline-flex group h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
