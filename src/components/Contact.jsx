@@ -1,9 +1,17 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const formVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
-    <div className="border-b border-neutral-900 pb-10">
+    <div className="border-b border-neutral-900 pb-10" ref={ref}>
       <div className="flex items-center justify-center">
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
@@ -23,7 +31,13 @@ const Contact = () => {
       </div>
 
       <div className="flex justify-center items-center min-h-screen p-4">
-        <div className="max-w-md w-full bg-slate-900 text-white shadow-lg rounded-lg p-6 border border-gray-700">
+        <motion.div
+          variants={formVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-md w-full bg-slate-900 text-white shadow-lg rounded-lg p-6 border border-gray-700"
+        >
           <h2 className="text-2xl font-bold text-center mb-4">Contact Form</h2>
           <form action="https://formsubmit.co/ashugupta1403@gmail.com" method="POST" className="space-y-4">
             <div>
@@ -73,7 +87,7 @@ const Contact = () => {
               Send Message
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
