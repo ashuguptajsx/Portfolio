@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Github, ExternalLink, Code, Layers, Zap, Star } from "lucide-react";
+import { Github, ExternalLink, Code, Layers, Zap, BookOpen, MessageCircle, Cloud } from "lucide-react";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -12,14 +12,13 @@ const Projects = () => {
   };
 
   const projects = [
-    
     {
       title: "Zenith",
       description: "A MERN chat app enabling seamless person-to-person communication with real-time messaging capabilities.",
       techStack: ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Express.js"],
       github: "https://github.com/ashu-1403/Zenith",
       demo: "https://zenith-hdwo.onrender.com",
-      icon: <Zap className="w-12 h-12 text-yellow-400" />,
+      icon: <MessageCircle className="w-12 h-12 text-blue-400" />, 
     },
     {
       title: "Portfolio Website",
@@ -35,24 +34,16 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/ashu-1403/Weather_application",
       demo: "https://weather-application-drab-five.vercel.app",
-      icon: <Layers className="w-12 h-12 text-green-400" />,
+      icon: <Cloud className="w-12 h-12 text-blue-400" />, 
     },
-    // {
-    //   title: "Task Manager",
-    //   description: "A full-stack task management application with user authentication.",
-    //   techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    //   github: "https://github.com/ashu-1403/task-manager",
-    //   demo: "https://task-manager-demo.vercel.app",
-    //   icon: <Star className="w-12 h-12 text-purple-400" />,
-    // },
-    // {
-    //   title: "E-commerce Platform",
-    //   description: "A responsive e-commerce website with product catalog and shopping cart functionality.",
-    //   techStack: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB"],
-    //   github: "https://github.com/ashu-1403/ecommerce-platform",
-    //   demo: "https://ecommerce-platform-demo.vercel.app",
-    //   icon: <ShoppingCart className="w-12 h-12 text-pink-400" />,
-    // },
+    {
+      title: "E-Learning Platform",
+      description: "A responsive frontend responsive website of the e-learning platform.",
+      techStack: ["React.js", "Nextjs", "TailwindCSS"],
+      github: "https://github.com/ashu-1403/e_learning_website",
+      demo: "https://ecommerce-platform-demo.vercel.app",
+      icon: <BookOpen className="w-12 h-12 text-pink-400" />,
+    },
   ];
 
   function getTechColor(tech) {
@@ -64,7 +55,8 @@ const Projects = () => {
       MongoDB: "text-green-500",
       "Express.js": "text-red-500",
       "Node.js": "text-lime-500",
-      Redux: "text-purple-500",
+      "Nextjs": "text-white",
+      "TailwindCSS": "text-cyan-400",
     };
     return colorMap[tech] || "text-gray-400";
   }
