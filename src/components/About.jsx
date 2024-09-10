@@ -17,8 +17,23 @@ const About = () => {
     }
   }, [controls, inView]);
 
-  const variants = {
+  const headingVariants = {
     hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.4 } },
+  };
+
+  const textChildVariants = {
+    hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
@@ -29,7 +44,7 @@ const About = () => {
           className="flex flex-col items-center justify-center mb-16"
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={headingVariants}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
             About Me
@@ -43,14 +58,16 @@ const About = () => {
             className="w-full lg:w-1/3 flex justify-center"
             initial="hidden"
             animate={controls}
-            variants={variants}
+            variants={imageVariants}
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-lg opacity-75"></div>
-              <img
+              <motion.img
                 src={image}
                 alt="Developer"
                 className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-white relative z-10"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ duration: 0.3 }}
               />
             </div>
           </motion.div>
@@ -59,14 +76,20 @@ const About = () => {
             className="w-full lg:w-2/3 flex flex-col items-center lg:items-start"
             initial="hidden"
             animate={controls}
-            variants={variants}
+            variants={textVariants}
           >
-            <p className="text-gray-300 text-xl leading-relaxed mb-6 text-center lg:text-left">
+            <motion.p
+              className="text-gray-300 text-xl leading-relaxed mb-6 text-center lg:text-left"
+              variants={textChildVariants}
+            >
               As a <span className="font-bold text-white">Full Stack Developer</span>, I excel in creating intuitive interfaces and robust back-end solutions. My expertise spans front-end frameworks, server-side technologies, and database systems.
-            </p>
-            <p className="text-gray-300 text-xl leading-relaxed text-center lg:text-left">
+            </motion.p>
+            <motion.p
+              className="text-gray-300 text-xl leading-relaxed text-center lg:text-left"
+              variants={textChildVariants}
+            >
               Driven by a passion for clean code and user-centric design, I craft seamless digital experiences that exceed expectations. My adaptability keeps me at the forefront of web development, ready to tackle any challenge with innovative solutions.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </div>

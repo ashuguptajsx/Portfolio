@@ -7,8 +7,23 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const projectVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 },
+  };
+
+  const techBadgeVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 15 } },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 20 } },
+  };
+
+  const tapEffect = {
+    scale: 0.95,
+    transition: { type: "spring", stiffness: 400, damping: 10 },
   };
 
   const projects = [
@@ -83,7 +98,8 @@ const Projects = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            whileTap={tapEffect}
+            className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <div className="p-6">
               <div className="flex items-center mb-4">
@@ -95,37 +111,48 @@ const Projects = () => {
                 <h3 className="text-lg font-semibold text-gray-200 mb-2">Tech Stack</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech, techIndex) => (
-                    <span
+                    <motion.span
                       key={techIndex}
+                      variants={techBadgeVariants}
+                      initial="hidden"
+                      animate={isInView ? "visible" : "hidden"}
+                      whileTap={tapEffect}
                       className={`px-3 py-1 ${getTechColor(tech)} bg-opacity-20 rounded-full text-sm font-medium border border-opacity-40 flex items-center`}
                     >
                       <span className={`w-2 h-2 rounded-full ${getTechColor(tech).replace('text-', 'bg-')} mr-2`}></span>
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="bg-gray-700 px-6 py-4 flex justify-between items-center">
-              <a
+            <motion.div
+              className="bg-gray-700 px-6 py-4 flex justify-between items-center"
+              variants={buttonVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <motion.a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileTap={tapEffect}
                 className="text-white hover:text-blue-400 transition-colors duration-200 flex items-center group"
               >
                 <Github size={20} className="mr-2 group-hover:animate-bounce" />
                 <span className="font-medium">GitHub</span>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileTap={tapEffect}
                 className="text-white hover:text-pink-400 transition-colors duration-200 flex items-center group"
               >
                 <ExternalLink size={20} className="mr-2 group-hover:animate-pulse" />
                 <span className="font-medium">Live Demo</span>
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </motion.div>
         ))}
       </div>
