@@ -1,87 +1,153 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Send, User, Mail, MessageSquare } from "lucide-react";
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
-  const formVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const inputVariants = {
+    focus: { scale: 1.02, transition: { duration: 0.3 } },
   };
 
   return (
-    <div className="border-b border-neutral-900 pb-10" ref={ref}>
-      <div className="flex items-center justify-center">
-        <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", stiffness: 200, damping: 20 }}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-16 lg:ml-52 font-Inter mr-2 sm:ml-2 mt-10 lg:mt-0" // Margin-top for smaller screens only
+    <div ref={ref} className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+        className="max-w-4xl mx-auto"
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
         >
-          Contact Us
-        </motion.h1>
+          Get in Touch
+        </motion.h2>
 
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", stiffness: 200, damping: 20 }}
-          className="flex-grow border-t-4 border-pink-300 mr-14 mt-12 lg:mr-64 lg:mt-3"
-        ></motion.div>
-      </div>
-
-      <div className="flex justify-center items-center min-h-screen p-4">
-        <motion.div
-          variants={formVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-md w-full bg-slate-900 text-white shadow-lg rounded-lg p-6 border border-gray-700"
+          variants={itemVariants}
+          className="bg-slate-800 shadow-2xl rounded-lg p-8 border border-gray-700"
         >
-          <h2 className="text-2xl font-bold text-center mb-4">Contact Form</h2>
-          <form action="https://formsubmit.co/ashugupta1403@gmail.com" method="POST" className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-                className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Your Message"
-                rows="4"
-                className="mt-1 block w-full border border-gray-600 rounded-lg p-2 bg-gray-800 text-white"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"
+          <form action="https://formsubmit.co/ashugupta1403@gmail.com" method="POST" className="space-y-6">
+            <motion.div variants={itemVariants}>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                Name
+              </label>
+              <motion.div
+                className="relative"
+                variants={inputVariants}
+                whileFocus="focus"
+              >
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                />
+              </motion.div>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                Email
+              </label>
+              <motion.div
+                className="relative"
+                variants={inputVariants}
+                whileFocus="focus"
+              >
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                />
+              </motion.div>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                Message
+              </label>
+              <motion.div
+                className="relative"
+                variants={inputVariants}
+                whileFocus="focus"
+              >
+                <MessageSquare className="absolute left-3 top-3 text-gray-400" size={18} />
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  rows="4"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                ></textarea>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Send Message
-            </button>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg flex items-center justify-center space-x-2 hover:from-blue-600 hover:to-purple-700 transition duration-300"
+              >
+                <span>Send Message</span>
+                <Send size={18} />
+              </button>
+            </motion.div>
           </form>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default Contact;
+
+
+
+
+
+
+

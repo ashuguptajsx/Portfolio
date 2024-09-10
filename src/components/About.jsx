@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import image from "../assets/developer.jpg";
+import { ChevronDown } from "lucide-react";
+import image from "../assets/developer2.jpg";
 
 const About = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
@@ -18,46 +19,56 @@ const About = () => {
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
-    <div ref={ref} className="border-b border-neutral-900 pb-10">
-      <div className="flex items-center justify-center">
-        <motion.h1
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-16 lg:ml-52 font-Inter mr-2 sm:ml-2"
-        >
-          About Me
-        </motion.h1>
-        
+    <div ref={ref} className="py-16 px-4 sm:px-6 lg:px-8 border-b border-neutral-900 bg-gradient-to-b from-gray-900 to-black">
+      <div className="max-w-7xl mx-auto">
         <motion.div
+          className="flex flex-col items-center justify-center mb-16"
           initial="hidden"
           animate={controls}
           variants={variants}
-          className="flex-grow border-t-4 border-white mr-14 mt-1 lg:mr-64"
-        ></motion.div>
-      </div>
-      
-      <div className="flex flex-col items-center mt-24 px-4 lg:px-0">
-        <motion.img
-          src={image}
-          alt="Developer"
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          className="w-64 h-60 rounded-full object-cover mb-8"
-        />
-        <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          className="text-white text-center font-Inter font-extrabold text-sm lg:text-lg lg:mx-96"
         >
-          As a seasoned Full Stack Developer, I possess a comprehensive skill set that spans both front-end and back-end technologies. My expertise includes creating seamless, user-friendly interfaces with modern frameworks and libraries such as React, while also ensuring robust, scalable server-side functionality using Node.js and Express. With a deep understanding of databases, including SQL and NoSQL.
-        </motion.p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            About Me
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-8"></div>
+          <ChevronDown className="text-gray-400 animate-bounce" size={32} />
+        </motion.div>
+        
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+          <motion.div
+            className="w-full lg:w-1/3 flex justify-center"
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-lg opacity-75"></div>
+              <img
+                src={image}
+                alt="Developer"
+                className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-white relative z-10"
+              />
+            </div>
+          </motion.div>
+          
+          <motion.div
+            className="w-full lg:w-2/3 flex flex-col items-center lg:items-start"
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+          >
+            <p className="text-gray-300 text-xl leading-relaxed mb-6 text-center lg:text-left">
+              As a <span className="font-bold text-white">Full Stack Developer</span>, I excel in creating intuitive interfaces and robust back-end solutions. My expertise spans front-end frameworks, server-side technologies, and database systems.
+            </p>
+            <p className="text-gray-300 text-xl leading-relaxed text-center lg:text-left">
+              Driven by a passion for clean code and user-centric design, I craft seamless digital experiences that exceed expectations. My adaptability keeps me at the forefront of web development, ready to tackle any challenge with innovative solutions.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

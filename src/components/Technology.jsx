@@ -1,118 +1,126 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { FaReact, FaCss3Alt, FaNodeJs } from "react-icons/fa";
+import { useInView } from 'react-intersection-observer';
+import { FaReact, FaCss3Alt, FaNodeJs, FaGithub, FaJava, FaJs } from "react-icons/fa";
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { SiExpress } from "react-icons/si";
+import { SiExpress, SiC, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
-
-const iconVariants = {
-  initial: { scale: 1, rotate: 0 },
-  hover: { scale: 1.2, rotate: 15 },
-  tap: { scale: 1.4, rotate: 0 }
-};
 
 const Technology = () => {
   const controls = useAnimation();
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
+    if (inView) {
       controls.start("visible");
     }
-  }, [controls, isVisible]);
+  }, [controls, inView]);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 0.5,
-        when: "beforeChildren",
         staggerChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 }
     }
   };
 
+  const iconVariants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: { 
+      scale: 1, 
+      rotate: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }
+    },
+    hover: { 
+      scale: 1.2,
+      rotate: 15,
+      transition: { duration: 0.3 }
+    },
+    tap: { 
+      scale: 0.95,
+      rotate: -15,
+      transition: { duration: 0.3 }
+    }
+  };
+
+  const technologies = [
+    { Icon: FaReact, color: 'text-blue-500', name: 'React' },
+    { Icon: AiOutlineHtml5, color: 'text-orange-500', name: 'HTML5' },
+    { Icon: FaCss3Alt, color: 'text-blue-600', name: 'CSS3' },
+    { Icon: FaJs, color: 'text-yellow-500', name: 'JavaScript' }, // Added JavaScript
+    { Icon: SiExpress, color: 'text-white', name: 'Express' },
+    { Icon: DiMongodb, color: 'text-green-400', name: 'MongoDB' },
+    { Icon: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+    { Icon: SiC, color: 'text-blue-300', name: 'C' },
+    { Icon: FaJava, color: 'text-red-500', name: 'Java' },
+    { Icon: FaGithub, color: 'text-gray-300', name: 'GitHub' },
+    { Icon: SiNextdotjs, color: 'text-white', name: 'Next.js' },
+    { Icon: SiTailwindcss, color: 'text-cyan-400', name: 'Tailwind CSS' },
+  ];
+
   return (
-    <div ref={ref} className='mt-10'>
-      <div className='flex items-center justify-center'>
-        <motion.h1
-          initial="hidden"
-          animate={controls}
-          variants={itemVariants}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-xl lg:text-4xl ml-14 lg:ml-48  font-Inter mr-2 sm:ml-2"
-        >
-          Technologies
-        </motion.h1>
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={itemVariants}
-          className="flex-grow border-t-4 border-pink-300  mr-14 mt-1 lg:mr-64"
-        ></motion.div>
-      </div>
+    <div ref={ref} className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
       <motion.div
         initial="hidden"
         animate={controls}
         variants={containerVariants}
-        className='flex flex-wrap justify-center items-center h-auto mt-12 lg:mt-36 lg:mb-36'
+        className="max-w-6xl mx-auto"
       >
-        {[
-          { Icon: FaReact, color: 'text-blue-500' },
-          { Icon: AiOutlineHtml5, color: 'text-orange-500' },
-          { Icon: FaCss3Alt, color: 'text-blue-600' },
-          { Icon: SiExpress, color: 'text-white' },
-          { Icon: DiMongodb, color: 'text-green-400' },
-          { Icon: FaNodeJs, color: 'text-green-500' }
-        ].map(({ Icon, color }, index) => (
-          <motion.div
-            key={index}
-            className={`mx-2 ${color}`}
-            variants={{
-              ...iconVariants,
-              ...itemVariants
-            }}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            transition={{ duration: 0.3 }}
-          >
-            <Icon className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl' />
-          </motion.div>
-        ))}
+        <motion.div 
+          variants={itemVariants}
+          className="flex items-center justify-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Technologies
+          </h2>
+        </motion.div>
+
+        <motion.div 
+          variants={containerVariants}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8"
+        >
+          {technologies.map(({ Icon, color, name }, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="flex flex-col items-center"
+            >
+              <motion.div
+                variants={iconVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className={`${color} p-4 rounded-full bg-gray-800 shadow-lg`}
+              >
+                <Icon className="text-4xl sm:text-5xl md:text-6xl" />
+              </motion.div>
+              <motion.p 
+                variants={itemVariants}
+                className="mt-2 text-gray-300 text-sm sm:text-base"
+              >
+                {name}
+              </motion.p>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </div>
   );

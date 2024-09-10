@@ -7,97 +7,97 @@ const Main = () => {
   const [tapped, setTapped] = useState(false);
 
   return (
-    <div className="border-b border-neutral-900 pb-20 mb-10 lg:mb-20">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start mx-4 sm:mx-10">
-        <div className="w-full lg:w-2/3 flex flex-col items-center lg:items-start lg:pr-10">
-          <div className="flex flex-col items-center lg:items-start lg:justify-start justify-center h-full lg:h-auto">
-            <motion.h1
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-thin font-mono-cutive tracking-tight mt-6 mb-10 lg:ml-28 text-white sm:mt-0 flex flex-col items-center justify-center lg:items-start lg:justify-start"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 1.1 }}
+    <div className="py-64 pt-36 px-4 sm:px-6 lg:px-8 border-b border-neutral-900">
+      <div className="max-w-7xl w-full mx-auto space-y-6 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+        <motion.div 
+          className="text-center lg:text-left space-y-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white space-y-1">
+            <motion.span 
+              className="block"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <span className="block">
-                <Typewriter
-                  words={["Hey, I'm"]}
-                  loop={false}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
-              <span className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                <Typewriter
-                  words={["Aashutosh Gupta."]}
-                  loop={false}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={2000}
-                />
-              </span>
-            </motion.h1>
-            <motion.span
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 lg:ml-28"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 1.1 }}
-            >
-              Full Stack Developer
+              <Typewriter
+                words={["Hey, I'm"]}
+                loop={false}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
             </motion.span>
-          </div>
-          <motion.p
-            className="text-center lg:text-left text-sm sm:text-base lg:text-lg max-w-md lg:max-w-xl lg:ml-28 mb-6 san-serif inter bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 1.1 }}
+            <motion.span 
+              className="block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+            >
+              <Typewriter
+                words={["Aashutosh Gupta."]}
+                loop={false}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </motion.span>
+          </h1>
+          <motion.p 
+            className="text-xl sm:text-2xl font-semibold text-gray-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.5, duration: 0.8 }}
           >
-            Welcome to my <motion.span className="font-extrabold">portfolio!</motion.span>
+            Full Stack Developer
           </motion.p>
-          <motion.a
-            className="mt-6 lg:ml-28 py-2 px-4 bg-blue-600 text-black font-semibold rounded-md shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-            href="mailto:ashugupta1403@gmail.com"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.1 }}
+          <motion.p 
+            className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3, duration: 0.8 }}
           >
-            Hire Me
-          </motion.a>
-        </div>
-
-        <div className="w-full lg:w-1/3 flex justify-center lg:justify-end lg:mr-28 mt-10 lg:mt-0">
+            Welcome to my <span className="font-bold text-white">portfolio!</span> Explore my projects and skills in web development.
+          </motion.p>
           <motion.div
-            className="relative inline-flex group h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96"
-            initial={{ opacity: 1, rotate: -10 }} // Initial tilt
-            animate={{ rotate: tapped ? 0 : -10 }} // Rotate back to 0 if tapped
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1 }} // Ensure no scaling on hover
-            whileTap={() => setTapped(true)} // Set tapped state to true on tap
-            style={{
-              borderColor: 'violet',
-              borderWidth: '4px',
-              borderStyle: 'solid',
-              borderRadius: '12px' // Curved border
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.5, duration: 0.8 }}
           >
-            <div className="absolute transition-all duration-700 opacity-70 -inset-px bg-gradient-to-r from-[#475569] via-[#1E293B] to-[#0F172A] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-400 animate-tilt"></div>
-            <div className="relative inline-flex items-center justify-center text-lg font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 h-full w-full">
+            <a
+              href="mailto:ashugupta1403@gmail.com"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+            >
+              Hire Me
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="mt-8 lg:mt-0 flex justify-center lg:justify-end"
+          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+          animate={{ opacity: 1, scale: 1, rotate: tapped ? 0 : -10 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={() => setTapped(true)}
+        >
+          <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            <div className="relative">
               <img
                 src={profileImage}
                 alt="Profile"
-                className="h-full w-full object-cover rounded-xl"
+                className="h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96 rounded-lg object-cover shadow-2xl"
               />
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
