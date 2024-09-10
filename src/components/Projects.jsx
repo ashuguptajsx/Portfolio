@@ -41,7 +41,7 @@ const Projects = () => {
       description: "A responsive frontend responsive website of the e-learning platform.",
       techStack: ["React.js", "Nextjs", "TailwindCSS"],
       github: "https://github.com/ashu-1403/e_learning_website",
-      demo: "https://ecommerce-platform-demo.vercel.app",
+      demo: "https://learnwithskillhub.vercel.app",
       icon: <BookOpen className="w-12 h-12 text-pink-400" />,
     },
   ];
