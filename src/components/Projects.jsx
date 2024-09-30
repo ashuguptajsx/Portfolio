@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Github, ExternalLink, Code, Layers, Zap, BookOpen, MessageCircle, Cloud } from "lucide-react";
+import { Github, ExternalLink, Code,  Zap, BookOpen, MessageCircle, Cloud, BarChart3 } from "lucide-react";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -33,14 +33,14 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Express.js"],
       github: "https://github.com/ashu-1403/Zenith",
       demo: "https://zenith-hdwo.onrender.com",
-      icon: <MessageCircle className="w-12 h-12 text-blue-400" />, 
+      icon: <MessageCircle className="w-12 h-12 text-blue-400" />,
     },
     {
-      title: "Portfolio Website",
-      description: "My personal portfolio website showcasing projects and skills.",
-      techStack: ["HTML", "CSS", "JavaScript", "React.js"],
-      github: "https://github.com/ashu-1403/Portfolio",
-      demo: "http://aashutoshgupta.vercel.app",
+      title: "Printify-Wbsite",
+      description: "printify website home page.",
+      techStack: [ "Tailwind CSS", "React.js"],
+      github: "https://github.com/ashu-1403/home-page",
+      demo: "https://home-page-two-smoky.vercel.app/",
       icon: <Code className="w-12 h-12 text-blue-400" />,
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       techStack: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/ashu-1403/Weather_application",
       demo: "https://weather-application-drab-five.vercel.app",
-      icon: <Cloud className="w-12 h-12 text-blue-400" />, 
+      icon: <Cloud className="w-12 h-12 text-blue-400" />,
     },
     {
       title: "E-Learning Platform",
@@ -58,6 +58,22 @@ const Projects = () => {
       github: "https://github.com/ashu-1403/e_learning_website",
       demo: "https://learnwithskillhub.vercel.app",
       icon: <BookOpen className="w-12 h-12 text-pink-400" />,
+    },
+    {
+      title: "Admin Panel",
+      description: "An admin panel with CRUD operations and graphical representation of user registration data using Chart.js.",
+      techStack: ["React.js", "TailwindCSS", "Chart.js", "JSON Server"],
+      github: "https://github.com/ashu-1403/admin-panel",
+      // demo: "https://admin-panel-live.vercel.app",
+      icon: <BarChart3 className="w-12 h-12 text-green-400" />,
+    },
+    {
+      title: "Chat-Gemini",
+      description: "An interactive Ai chatbot building with the Google's Ai generative api.",
+      techStack: ["React.js", "TailwindCSS", "Node.js", "Express.js", "mongodb"],
+      github: "https://github.com/ashu-1403/chat-gpt",
+      demo: "https://chat-gpt-twul.vercel.app/",
+      icon: <Zap className="w-12 h-12 text-yellow-400" />,
     },
   ];
 
@@ -72,6 +88,8 @@ const Projects = () => {
       "Node.js": "text-lime-500",
       "Nextjs": "text-white",
       "TailwindCSS": "text-cyan-400",
+      "Chart.js": "text-purple-500",
+      "JSON Server": "text-gray-500",
     };
     return colorMap[tech] || "text-gray-400";
   }
