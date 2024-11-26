@@ -25,7 +25,7 @@ const Projects = () => {
         type: "spring",
         damping: 20,
         stiffness: 100
-      }
+      }       
     }
   };
 
