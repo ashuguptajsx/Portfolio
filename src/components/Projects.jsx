@@ -30,6 +30,16 @@ const Projects = () => {
   };
 
   const projects = [
+
+     {
+      title: "TripMyWay",
+      description: "A trip planner and full-stack app using Firebase for backend, Gemini APIs for itinerary generation, and Google Maps for location services.",
+      techStack: ["Firebase", "React.js", "TailwindCSS", "Gemini API", "Google Maps"],
+      github: "https://github.com/ashu-1403/TripMyWay",
+      demo: "https://tripmyway.vercel.app",
+      icon: <MapPin className="w-8 h-8" />,
+      color: "from-red-400 to-red-600"
+    },
     {
       title: "Zenith",
       description: "A MERN chat app enabling seamless person-to-person communication with real-time messaging capabilities.",
@@ -40,23 +50,33 @@ const Projects = () => {
       color: "from-blue-400 to-blue-600"
     },
     {
-      title: "Printify-Website",
-      description: "printify website home page.",
-      techStack: ["Tailwind CSS", "React.js"],
-      github: "https://github.com/ashu-1403/home-page",
-      demo: "https://home-page-two-smoky.vercel.app/",
-      icon: <Code className="w-8 h-8" />,
-      color: "from-purple-400 to-purple-600"
+      title: "Admin Panel",
+      description: "An admin panel with CRUD operations and graphical representation of user registration data using Chart.js.",
+      techStack: ["React.js", "TailwindCSS", "Chart.js", "JSON Server"],
+      github: "https://github.com/ashu-1403/admin-panel",
+      demo: null, // No demo link for this project
+      icon: <BarChart3 className="w-8 h-8" />,
+      color: "from-green-400 to-green-600"
     },
-    {
-      title: "Weather App",
-      description: "A weather application created using the OpenWeather API.",
-      techStack: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/ashu-1403/Weather_application",
-      demo: "https://weather-application-drab-five.vercel.app",
-      icon: <Cloud className="w-8 h-8" />,
-      color: "from-cyan-400 to-cyan-600"
-    },
+    
+    // {
+    //   title: "Printify-Website",
+    //   description: "printify website home page.",
+    //   techStack: ["Tailwind CSS", "React.js"],
+    //   github: "https://github.com/ashu-1403/home-page",
+    //   demo: "https://home-page-two-smoky.vercel.app/",
+    //   icon: <Code className="w-8 h-8" />,
+    //   color: "from-purple-400 to-purple-600"
+    // },
+    // {
+    //   title: "Weather App",
+    //   description: "A weather application created using the OpenWeather API.",
+    //   techStack: ["HTML", "CSS", "JavaScript"],
+    //   github: "https://github.com/ashu-1403/Weather_application",
+    //   demo: "https://weather-application-drab-five.vercel.app",
+    //   icon: <Cloud className="w-8 h-8" />,
+    //   color: "from-cyan-400 to-cyan-600"
+    // },
     {
       title: "E-Learning Platform",
       description: "A responsive frontend responsive website of the e-learning platform.",
@@ -66,33 +86,17 @@ const Projects = () => {
       icon: <BookOpen className="w-8 h-8" />,
       color: "from-pink-400 to-pink-600"
     },
-    {
-      title: "Admin Panel",
-      description: "An admin panel with CRUD operations and graphical representation of user registration data using Chart.js.",
-      techStack: ["React.js", "TailwindCSS", "Chart.js", "JSON Server"],
-      github: "https://github.com/ashu-1403/admin-panel",
-      demo: null, // No demo link for this project
-      icon: <BarChart3 className="w-8 h-8" />,
-      color: "from-green-400 to-green-600"
-    },
-    {
-      title: "Chat-Gemini",
-      description: "An interactive AI chatbot building with Google's AI generative API.",
-      techStack: ["React.js", "TailwindCSS", "Node.js", "Express.js", "mongodb"],
-      github: "https://github.com/ashu-1403/chatGemini",
-      demo: "https://chat-gemini-dun-one.vercel.app/",
-      icon: <Zap className="w-8 h-8" />,
-      color: "from-yellow-400 to-yellow-600"
-    },
-    {
-      title: "TripMyWay",
-      description: "A trip planner and full-stack app using Firebase for backend, Gemini APIs for itinerary generation, and Google Maps for location services.",
-      techStack: ["Firebase", "React.js", "TailwindCSS", "Gemini API", "Google Maps"],
-      github: "https://github.com/ashu-1403/TripMyWay",
-      demo: "https://tripmyway.vercel.app",
-      icon: <MapPin className="w-8 h-8" />,
-      color: "from-red-400 to-red-600"
-    }
+    
+    // {
+    //   title: "Chat-Gemini",
+    //   description: "An interactive AI chatbot building with Google's AI generative API.",
+    //   techStack: ["React.js", "TailwindCSS", "Node.js", "Express.js", "mongodb"],
+    //   github: "https://github.com/ashu-1403/chatGemini",
+    //   demo: "https://chat-gemini-dun-one.vercel.app/",
+    //   icon: <Zap className="w-8 h-8" />,
+    //   color: "from-yellow-400 to-yellow-600"
+    // },
+   
   ];
 
   const getTechColor = (tech) => {
