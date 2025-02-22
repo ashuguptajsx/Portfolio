@@ -31,11 +31,11 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-commerce latform (Developing)",
+      title: "E-commerce Platform (Developing)",
       description: "A full-stack e-commerce platform with Redis caching, Stripe payments, and MERN stack implementation for optimal performance and secure transactions.",
       techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Redis", "Stripe", "TailwindCSS"],
-      github: "https://github.com/ashu-1403/ecommerce-platform",
-      demo: "https://ecommerce-platform.vercel.app", // Update with actual demo link
+      github: "https://github.com/ashuguptajsx/redis-ecommerce-backend",
+      // demo: "https://ecommerce-platform.vercel.app", // Update with actual demo link
       icon: <ShoppingCart className="w-8 h-8" />,
       color: "from-orange-400 to-orange-600"
     },
