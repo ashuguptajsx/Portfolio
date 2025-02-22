@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Github, ExternalLink, Code, Zap, BookOpen, MessageCircle, Cloud, BarChart3, MapPin } from "lucide-react";
+import { Github, ExternalLink, Code, Zap, BookOpen, MessageCircle, Cloud, BarChart3, MapPin, ShoppingCart, CreditCard, Database } from "lucide-react";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -30,8 +30,16 @@ const Projects = () => {
   };
 
   const projects = [
-
-     {
+    {
+      title: "E-commerce latform (Developing)",
+      description: "A full-stack e-commerce platform with Redis caching, Stripe payments, and MERN stack implementation for optimal performance and secure transactions.",
+      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Redis", "Stripe", "TailwindCSS"],
+      github: "https://github.com/ashu-1403/ecommerce-platform",
+      demo: "https://ecommerce-platform.vercel.app", // Update with actual demo link
+      icon: <ShoppingCart className="w-8 h-8" />,
+      color: "from-orange-400 to-orange-600"
+    },
+    {
       title: "TripMyWay",
       description: "A trip planner and full-stack app using Firebase for backend, Gemini APIs for itinerary generation, and Google Maps for location services.",
       techStack: ["Firebase", "React.js", "TailwindCSS", "Gemini API", "Google Maps"],
@@ -54,29 +62,10 @@ const Projects = () => {
       description: "An admin panel with CRUD operations and graphical representation of user registration data using Chart.js.",
       techStack: ["React.js", "TailwindCSS", "Chart.js", "JSON Server"],
       github: "https://github.com/ashu-1403/admin-panel",
-      demo: null, // No demo link for this project
+      demo: null,
       icon: <BarChart3 className="w-8 h-8" />,
       color: "from-green-400 to-green-600"
     },
-    
-    // {
-    //   title: "Printify-Website",
-    //   description: "printify website home page.",
-    //   techStack: ["Tailwind CSS", "React.js"],
-    //   github: "https://github.com/ashu-1403/home-page",
-    //   demo: "https://home-page-two-smoky.vercel.app/",
-    //   icon: <Code className="w-8 h-8" />,
-    //   color: "from-purple-400 to-purple-600"
-    // },
-    // {
-    //   title: "Weather App",
-    //   description: "A weather application created using the OpenWeather API.",
-    //   techStack: ["HTML", "CSS", "JavaScript"],
-    //   github: "https://github.com/ashu-1403/Weather_application",
-    //   demo: "https://weather-application-drab-five.vercel.app",
-    //   icon: <Cloud className="w-8 h-8" />,
-    //   color: "from-cyan-400 to-cyan-600"
-    // },
     {
       title: "E-Learning Platform",
       description: "A responsive frontend responsive website of the e-learning platform.",
@@ -86,17 +75,6 @@ const Projects = () => {
       icon: <BookOpen className="w-8 h-8" />,
       color: "from-pink-400 to-pink-600"
     },
-    
-    // {
-    //   title: "Chat-Gemini",
-    //   description: "An interactive AI chatbot building with Google's AI generative API.",
-    //   techStack: ["React.js", "TailwindCSS", "Node.js", "Express.js", "mongodb"],
-    //   github: "https://github.com/ashu-1403/chatGemini",
-    //   demo: "https://chat-gemini-dun-one.vercel.app/",
-    //   icon: <Zap className="w-8 h-8" />,
-    //   color: "from-yellow-400 to-yellow-600"
-    // },
-   
   ];
 
   const getTechColor = (tech) => {
@@ -115,6 +93,8 @@ const Projects = () => {
       Firebase: "bg-yellow-500",
       "Gemini API": "bg-indigo-500",
       "Google Maps": "bg-green-600",
+      Redis: "bg-red-600",
+      Stripe: "bg-purple-600",
     };
     return `${colorMap[tech] || "bg-gray-400"} bg-opacity-20`;
   };
